@@ -28,8 +28,8 @@ public class Bullet : MonoBehaviour
     {
         transform.Translate(_direction * (speed * Time.deltaTime), Space.World);
     }
-    
-    void DisableBullet() 
+
+    public void DisableBullet() 
     {
         PoolManager.Instance.ReturnToPool("Bullet", gameObject);
     }
