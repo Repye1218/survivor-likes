@@ -25,10 +25,13 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
+        // 본인이 살아있거나 타겟이 없으면
         if (!isLive || target == null) return;
         
         Vector2 dirVector = target.position - transform.position;
         Vector2 nxtVector = dirVector.normalized * (speed * Time.fixedDeltaTime);
+        
+        // later: spiterander를 이용하기 위한 flipX 사용
         
         rb.MovePosition(rb.position + nxtVector);
     }
